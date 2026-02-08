@@ -7,7 +7,7 @@ namespace: wunderland
 category: developer-tools
 tags: [git, version-control, vcs, branching, commits]
 requires_secrets: []
-requires_tools: []
+requires_tools: [filesystem]
 metadata:
   agentos:
     emoji: '🧰'

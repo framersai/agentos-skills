@@ -10,7 +10,7 @@ requires_secrets: []
 requires_tools: [filesystem]
 metadata:
   agentos:
-    emoji: "\uD83D\uDCBB"
+    emoji: "\U0001F4BB"
 ---
 
 # Code Writing and Review Agent

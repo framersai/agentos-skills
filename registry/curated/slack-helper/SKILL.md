@@ -10,8 +10,9 @@ requires_secrets: [slack.bot_token, slack.app_token]
 requires_tools: []
 metadata:
   agentos:
-    emoji: "\uD83D\uDCAC"
+    emoji: "\U0001F4AC"
     primaryEnv: SLACK_BOT_TOKEN
+    secondaryEnvs: [SLACK_APP_TOKEN]
     homepage: https://api.slack.com
 ---
 

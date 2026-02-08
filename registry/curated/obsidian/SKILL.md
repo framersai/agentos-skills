@@ -10,7 +10,7 @@ requires_secrets: []
 requires_tools: [filesystem]
 metadata:
   agentos:
-    emoji: "\uD83D\uDC8E"
+    emoji: "\U0001F48E"
     homepage: https://obsidian.md
 ---
 

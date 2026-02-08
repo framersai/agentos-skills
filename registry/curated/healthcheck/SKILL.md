@@ -10,7 +10,7 @@ requires_secrets: []
 requires_tools: [web-search]
 metadata:
   agentos:
-    emoji: "\uD83C\uDFE5"
+    emoji: "\U0001F3E5"
     requires:
       anyBins: ['curl', 'wget']
 ---

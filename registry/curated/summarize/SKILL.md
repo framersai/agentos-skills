@@ -10,7 +10,7 @@ requires_secrets: []
 requires_tools: [web-search]
 metadata:
   agentos:
-    emoji: "\uD83D\uDCDD"
+    emoji: "\U0001F4DD"
 ---
 
 # Text and URL Summarization

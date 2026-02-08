@@ -10,8 +10,9 @@ requires_secrets: [spotify.client_id, spotify.client_secret, spotify.refresh_tok
 requires_tools: []
 metadata:
   agentos:
-    emoji: "\uD83C\uDFB5"
+    emoji: "\U0001F3B5"
     primaryEnv: SPOTIFY_CLIENT_ID
+    secondaryEnvs: [SPOTIFY_CLIENT_SECRET, SPOTIFY_REFRESH_TOKEN]
     homepage: https://developer.spotify.com
 ---
 

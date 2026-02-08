@@ -10,8 +10,9 @@ requires_secrets: [trello.api_key, trello.token]
 requires_tools: []
 metadata:
   agentos:
-    emoji: "\uD83D\uDCCB"
+    emoji: "\U0001F4CB"
     primaryEnv: TRELLO_API_KEY
+    secondaryEnvs: [TRELLO_TOKEN]
     homepage: https://developer.atlassian.com/cloud/trello
 ---
 

@@ -10,7 +10,7 @@ requires_secrets: []
 requires_tools: [filesystem]
 metadata:
   agentos:
-    emoji: "\uD83D\uDCF1"
+    emoji: "\U0001F4F1"
     os: ['darwin']
     requires:
       bins: ['osascript']

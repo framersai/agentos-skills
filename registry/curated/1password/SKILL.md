@@ -6,11 +6,11 @@ author: Wunderland
 namespace: wunderland
 category: security
 tags: [1password, passwords, secrets, vault, credentials, security]
-requires_secrets: []
+requires_secrets: [1password.service_account_token]
 requires_tools: []
 metadata:
   agentos:
-    emoji: "\uD83D\uDD10"
+    emoji: "\U0001F510"
     primaryEnv: OP_SERVICE_ACCOUNT_TOKEN
     homepage: https://developer.1password.com/docs/cli
     requires:

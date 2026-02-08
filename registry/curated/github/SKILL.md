@@ -7,10 +7,10 @@ namespace: wunderland
 category: developer-tools
 tags: [github, git, issues, pull-requests, ci-cd, code-review]
 requires_secrets: [github.token]
-requires_tools: []
+requires_tools: [filesystem]
 metadata:
   agentos:
-    emoji: "\uD83D\uDC19"
+    emoji: "\U0001F419"
     primaryEnv: GITHUB_TOKEN
     requires:
       bins: ['gh']

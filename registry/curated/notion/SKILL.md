@@ -10,7 +10,7 @@ requires_secrets: [notion.api_key]
 requires_tools: []
 metadata:
   agentos:
-    emoji: "\uD83D\uDCD3"
+    emoji: "\U0001F4D3"
     primaryEnv: NOTION_API_KEY
     homepage: https://developers.notion.com
 ---

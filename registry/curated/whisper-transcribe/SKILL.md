@@ -10,7 +10,7 @@ requires_secrets: [openai.api_key]
 requires_tools: [filesystem]
 metadata:
   agentos:
-    emoji: "\uD83C\uDF99\uFE0F"
+    emoji: "\U0001F399\uFE0F"
     primaryEnv: OPENAI_API_KEY
     homepage: https://platform.openai.com/docs/guides/speech-to-text
     requires:

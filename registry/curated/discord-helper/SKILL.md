@@ -10,7 +10,7 @@ requires_secrets: [discord.bot_token]
 requires_tools: []
 metadata:
   agentos:
-    emoji: "\uD83C\uDFAE"
+    emoji: "\U0001F3AE"
     primaryEnv: DISCORD_BOT_TOKEN
     homepage: https://discord.com/developers
 ---
