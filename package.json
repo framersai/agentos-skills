@@ -1,6 +1,6 @@
 {
   "name": "@framers/agentos-skills",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Skills runtime for AgentOS — loads, parses, and manages SKILL.md prompt modules",
   "type": "module",
   "sideEffects": false,
