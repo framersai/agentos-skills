@@ -1,33 +1,33 @@
 {
   "name": "@framers/agentos-skills",
-  "version": "0.2.0",
-  "description": "Community registry of skills for AgentOS (SKILL.md prompt modules)",
+  "version": "1.0.0",
+  "description": "Skills runtime for AgentOS — loads, parses, and manages SKILL.md prompt modules",
   "type": "module",
   "sideEffects": false,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./registry.json",
-      "types": "./types.d.ts"
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     },
-    "./registry.json": "./registry.json",
     "./package.json": "./package.json"
   },
   "files": [
-    "registry",
-    "registry.json",
-    "types.d.ts",
+    "dist",
     "README.md"
   ],
   "scripts": {
-    "validate": "node scripts/validate-skill.mjs"
-  },
-  "publishConfig": {
-    "access": "public"
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "clean": "rm -rf dist *.tsbuildinfo"
   },
   "keywords": [
     "agentos",
     "skills",
-    "registry",
+    "runtime",
+    "skill-loader",
+    "skill-registry",
     "prompts"
   ],
   "author": {
@@ -39,5 +39,23 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/framersai/agentos-skills.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "yaml": "^2.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "@framers/agentos": ">=0.1.0"
+  },
+  "peerDependenciesMeta": {
+    "@framers/agentos": {
+      "optional": true
+    }
   }
 }

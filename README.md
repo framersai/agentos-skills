@@ -1,6 +1,6 @@
 # @framers/agentos-skills
 
-Curated catalog of **skills** for the [AgentOS](https://github.com/framersai/agentos) ecosystem.
+Skills runtime for the [AgentOS](https://github.com/framersai/agentos) ecosystem -- loads, parses, and manages SKILL.md prompt modules.
 
 [![npm](https://img.shields.io/npm/v/@framers/agentos-skills?logo=npm&color=cb3837)](https://www.npmjs.com/package/@framers/agentos-skills)
 
@@ -10,115 +10,79 @@ npm install @framers/agentos-skills
 
 ## What's Inside
 
-This package is **data only** — no runtime code, no heavy dependencies. It ships:
+This package is the **runtime** for the AgentOS skills system. It provides:
 
-| File                          | Description                                                         |
-| ----------------------------- | ------------------------------------------------------------------- |
-| `registry/curated/*/SKILL.md` | 18 curated skill definitions (weather, github, slack, notion, etc.) |
-| `registry.json`               | Flat JSON index of every skill with metadata                        |
-| `types.d.ts`                  | TypeScript type declarations for the registry schema                |
-
-Each skill is a directory containing a `SKILL.md` file with **YAML frontmatter** (metadata, requirements, install specs) and a **markdown body** (instructions injected into an agent's system prompt).
-
-## Available Skills
-
-| Category            | Skills                                                 |
-| ------------------- | ------------------------------------------------------ |
-| **Information**     | weather, summarize                                     |
-| **Developer Tools** | github, coding-agent                                   |
-| **Communication**   | slack-helper, discord-helper                           |
-| **Productivity**    | notion, obsidian, trello, apple-notes, apple-reminders |
-| **DevOps**          | healthcheck                                            |
-| **Media**           | spotify-player, whisper-transcribe                     |
-| **Security**        | 1password                                              |
-| **Creative**        | image-gen                                              |
+| Module              | Description                                                              |
+| ------------------- | ------------------------------------------------------------------------ |
+| `SkillLoader`       | Loads and parses SKILL.md files with YAML frontmatter                    |
+| `SkillRegistry`     | Runtime registry for managing, querying, and filtering loaded skills     |
+| `paths`             | Path resolution utilities for discovering default skill directories      |
+| `types`             | Full TypeScript type definitions for skills, metadata, and configuration |
 
 ## Usage
 
-### Raw data (no dependencies needed)
-
 ```typescript
-import registry from '@framers/agentos-skills';
+import {
+  SkillRegistry,
+  loadSkillFromDir,
+  loadSkillsFromDir,
+  resolveDefaultSkillsDirs,
+} from '@framers/agentos-skills';
 
-// registry.json is the full catalog
-console.log(registry.skills.curated.length); // 16+
-```
+// Discover default skill directories
+const dirs = resolveDefaultSkillsDirs();
 
-### With the typed SDK
+// Create a registry and load skills
+const registry = new SkillRegistry();
+await registry.loadFromDirs(dirs);
 
-For programmatic queries, filtering, and runtime loading, use [`@framers/agentos-skills-registry`](https://www.npmjs.com/package/@framers/agentos-skills-registry):
+console.log(`Loaded ${registry.size} skills`);
 
-```bash
-npm install @framers/agentos-skills-registry
-```
-
-```typescript
-import { searchSkills, getSkillsByCategory } from '@framers/agentos-skills-registry/catalog';
-
-const devTools = getSkillsByCategory('developer-tools');
-const matches = searchSkills('github');
+// Build a snapshot for LLM context
+const snapshot = registry.buildSnapshot({ platform: 'darwin', strict: true });
+console.log(snapshot.prompt);
 ```
 
 ## Relationship to Other Packages
 
 ```
-@framers/agentos-skills          ← You are here (data: SKILL.md files + JSON index)
-  └── @framers/agentos-skills-registry   (SDK: typed catalog, query helpers, registry factories)
-        └── @framers/agentos             (optional peer: live SkillRegistry + snapshots)
+@framers/agentos-skills              <-- You are here (runtime: SkillLoader, SkillRegistry, types)
+@framers/agentos-skills-registry     (catalog: 40+ curated SKILL.md files + JSON index)
+@framers/agentos                     (full cognitive runtime, re-exports skills from here)
 ```
 
-| Package                              | What                                      | Runtime Code | Dependencies                           |
-| ------------------------------------ | ----------------------------------------- | :----------: | -------------------------------------- |
-| **@framers/agentos-skills**          | Raw SKILL.md files + JSON index           |      No      | Zero                                   |
-| **@framers/agentos-skills-registry** | Typed catalog + query helpers + factories |     Yes      | `agentos-skills`, optionally `agentos` |
-| **@framers/agentos**                 | Full cognitive runtime with SkillRegistry |     Yes      | Many                                   |
+| Package                              | What                                      | Runtime Code | Dependencies    |
+| ------------------------------------ | ----------------------------------------- | :----------: | --------------- |
+| **@framers/agentos-skills**          | SkillLoader, SkillRegistry, path utils    |     Yes      | `yaml`          |
+| **@framers/agentos-skills-registry** | 40+ SKILL.md files + JSON index + catalog |      No      | Zero            |
+| **@framers/agentos**                 | Full cognitive runtime                    |     Yes      | Many            |
 
-## Contributing a Skill
+## API
 
-1. **Fork** the [agentos-skills](https://github.com/framersai/agentos-skills) repository.
-2. **Create** a `SKILL.md` file in `registry/community/<your-skill>/`.
-3. **Open a PR** against `main`.
+### SkillLoader
 
-See [`CONTRIBUTING.md`](https://github.com/framersai/agentos-skills/blob/main/CONTRIBUTING.md) for the full SKILL.md format spec and submission process.
+- `parseSkillFrontmatter(content)` -- Parse YAML frontmatter from SKILL.md content
+- `extractMetadata(frontmatter)` -- Extract typed SkillMetadata from parsed frontmatter
+- `loadSkillFromDir(dir)` -- Load a single skill from a directory containing SKILL.md
+- `loadSkillsFromDir(dir)` -- Load all skills from a parent directory
+- `filterByPlatform(entries, platform)` -- Filter skill entries by OS platform
+- `filterByEligibility(entries, context)` -- Filter by full eligibility context
+- `checkBinaryRequirements(entry, hasBin)` -- Check if binary requirements are met
 
-## Community vs Curated
+### SkillRegistry
 
-Skills ship in two tiers, all bundled in this single package:
+- `register(entry)` / `unregister(name)` -- Add/remove skills
+- `loadFromDir(dir)` / `loadFromDirs(dirs)` / `reload(options)` -- Bulk loading
+- `getByName(name)` / `listAll()` / `has(name)` / `size` -- Queries
+- `filterByPlatform(platform)` / `filterByEligibility(context)` -- Filtering
+- `getUserInvocableSkills()` / `getModelInvocableSkills()` -- Invocation filtering
+- `buildSnapshot(options)` -- Build LLM context snapshot
+- `buildPrompt(entries)` -- Format skills into prompt text
+- `buildCommandSpecs(options)` -- Generate CLI command specs
 
-| Tier          | Namespace    | Maintained By   | Verified |
-| ------------- | ------------ | --------------- | :------: |
-| **Curated**   | `wunderland` | Core staff      |   Yes    |
-| **Community** | `community`  | PR contributors |    No    |
+### Path Utilities
 
-Curated skills live in `registry/curated/` and are maintained and tested by the AgentOS team. Community skills live in `registry/community/` and are submitted via pull request from the community.
-
-## Skill Format Quick Reference
-
-```yaml
----
-name: my-skill
-description: Short description of what this skill does
-namespace: community # or 'wunderland' for curated
-category: productivity # information | developer-tools | communication | productivity | devops | media | security | creative
-tags: [example, template]
-metadata:
-  openclaw:
-    emoji: "\U0001F4A1"
-    primaryEnv: MY_API_KEY # optional
-    os: [darwin, linux] # optional platform restriction
-    requires:
-      bins: [my-tool] # all must exist
-    install:
-      - id: brew
-        kind: brew
-        formula: my-tool
-        bins: [my-tool]
-        label: 'Install via Homebrew'
----
-# My Skill
-
-Instructions injected into the agent's system prompt go here.
-```
+- `resolveDefaultSkillsDirs(options)` -- Resolve default skill directories to scan
 
 ## License
 
