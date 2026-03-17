@@ -54,7 +54,7 @@ console.log(snapshot.prompt);
 | Package                              | What                                      | Runtime Code | Dependencies    |
 | ------------------------------------ | ----------------------------------------- | :----------: | --------------- |
 | **@framers/agentos-skills**          | SkillLoader, SkillRegistry, path utils    |     Yes      | `yaml`          |
-| **@framers/agentos-skills-registry** | 40+ SKILL.md files + JSON index + catalog |      No      | Zero            |
+| **@framers/agentos-skills-registry** | 40+ SKILL.md files + JSON index + catalog |      No      | `yaml`          |
 | **@framers/agentos**                 | Full cognitive runtime                    |     Yes      | Many            |
 
 ## API
@@ -87,3 +87,4 @@ console.log(snapshot.prompt);
 ## License
 
 MIT
+
