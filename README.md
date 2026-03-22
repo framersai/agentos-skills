@@ -6,7 +6,7 @@
 
 # @framers/agentos-skills
 
-Skills runtime for the [AgentOS](https://github.com/framersai/agentos) ecosystem -- loads, parses, and manages SKILL.md prompt modules.
+**Skills engine for AgentOS** -- the parser, loader, and `SkillRegistry` runtime that powers SKILL.md prompt modules.
 
 [![npm](https://img.shields.io/npm/v/@framers/agentos-skills?logo=npm&color=cb3837)](https://www.npmjs.com/package/@framers/agentos-skills)
 
@@ -14,9 +14,18 @@ Skills runtime for the [AgentOS](https://github.com/framersai/agentos) ecosystem
 npm install @framers/agentos-skills
 ```
 
+> **This is the runtime/engine.** It parses SKILL.md frontmatter, resolves paths,
+> manages the in-memory registry, and builds LLM-ready prompts. The companion
+> package [`@framers/agentos-skills-registry`](https://github.com/framersai/agentos-skills-registry)
+> provides the curated catalog of 40+ skill definitions that this engine loads.
+>
+> **Dependency direction:** `agentos-skills-registry` depends on _this_ package
+> (not the reverse). This package has zero knowledge of the catalog -- it only
+> knows how to read any directory containing `SKILL.md` files.
+
 ## What's Inside
 
-This package is the **runtime** for the AgentOS skills system. It provides:
+This package is the **runtime engine** for the AgentOS skills system. It provides:
 
 | Module              | Description                                                              |
 | ------------------- | ------------------------------------------------------------------------ |
@@ -52,16 +61,19 @@ console.log(snapshot.prompt);
 ## Relationship to Other Packages
 
 ```
-@framers/agentos-skills              <-- You are here (runtime: SkillLoader, SkillRegistry, types)
-@framers/agentos-skills-registry     (catalog: 40+ curated SKILL.md files + JSON index)
+@framers/agentos-skills              <-- You are here (ENGINE: parser, loader, SkillRegistry)
+  ^
+  |  depends on
+  |
+@framers/agentos-skills-registry     (CATALOG: 40+ curated SKILL.md files + JSON index)
 @framers/agentos                     (full cognitive runtime, re-exports skills from here)
 ```
 
-| Package                              | What                                      | Runtime Code | Dependencies    |
-| ------------------------------------ | ----------------------------------------- | :----------: | --------------- |
-| **@framers/agentos-skills**          | SkillLoader, SkillRegistry, path utils    |     Yes      | `yaml`          |
-| **@framers/agentos-skills-registry** | 40+ SKILL.md files + JSON index + catalog |      No      | `yaml`          |
-| **@framers/agentos**                 | Full cognitive runtime                    |     Yes      | Many            |
+| Package                              | Role        | What                                      | Runtime Code | Depends On              |
+| ------------------------------------ | ----------- | ----------------------------------------- | :----------: | ----------------------- |
+| **@framers/agentos-skills**          | **Engine**  | SkillLoader, SkillRegistry, path utils    |     Yes      | `yaml`                  |
+| **@framers/agentos-skills-registry** | **Catalog** | 40+ SKILL.md files + JSON index + catalog |      No      | `agentos-skills`, `yaml`|
+| **@framers/agentos**                 | **Runtime** | Full cognitive runtime                    |     Yes      | Many                    |
 
 ## API
 
