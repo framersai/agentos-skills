@@ -1,34 +1,35 @@
 {
   "name": "@framers/agentos-skills",
-  "version": "0.3.0",
-  "description": "Skills engine for AgentOS — parser, loader, and SkillRegistry runtime for SKILL.md prompt modules",
+  "version": "1.0.0",
+  "description": "Curated SKILL.md prompt modules for AgentOS — 69 staff-verified skills with machine-readable registry index",
   "type": "module",
   "sideEffects": false,
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    },
+    ".": "./registry.json",
+    "./registry.json": "./registry.json",
+    "./types": "./types.d.ts",
     "./package.json": "./package.json"
   },
   "files": [
-    "dist",
+    "registry",
+    "registry.json",
+    "types.d.ts",
+    "scripts",
+    "CONTRIBUTING.md",
     "README.md"
   ],
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "typecheck": "tsc -p tsconfig.json --noEmit",
-    "clean": "rm -rf dist *.tsbuildinfo"
+    "validate": "node scripts/validate-skill.mjs",
+    "update:registry": "node scripts/update-registry.mjs"
   },
   "keywords": [
     "agentos",
     "skills",
-    "runtime",
-    "skill-loader",
-    "skill-registry",
-    "prompts"
+    "prompts",
+    "skill-modules",
+    "ai-agent",
+    "prompt-engineering",
+    "curated-catalog"
   ],
   "author": {
     "name": "Framers AI",
@@ -42,20 +43,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {
-    "yaml": "^2.8.1"
-  },
-  "devDependencies": {
-    "@types/node": "^20.12.12",
-    "typescript": "^5.4.5"
-  },
-  "peerDependencies": {
-    "@framers/agentos": ">=0.1.0"
-  },
-  "peerDependenciesMeta": {
-    "@framers/agentos": {
-      "optional": true
-    }
   }
 }

@@ -6,7 +6,7 @@
 
 # @framers/agentos-skills
 
-**Skills engine for AgentOS** -- the parser, loader, and `SkillRegistry` runtime that powers SKILL.md prompt modules.
+**Curated SKILL.md prompt modules for AgentOS** — 69 staff-verified skills with a machine-readable registry index.
 
 [![npm](https://img.shields.io/npm/v/@framers/agentos-skills?logo=npm&color=cb3837)](https://www.npmjs.com/package/@framers/agentos-skills)
 
@@ -14,95 +14,118 @@
 npm install @framers/agentos-skills
 ```
 
-> **This is the runtime/engine.** It parses SKILL.md frontmatter, resolves paths,
-> manages the in-memory registry, and builds LLM-ready prompts. The companion
-> package [`@framers/agentos-skills-registry`](https://github.com/framersai/agentos-skills-registry)
-> provides the curated catalog of 40+ skill definitions that this engine loads.
+> **This is the content package.** It contains 69 curated SKILL.md files and
+> the auto-generated `registry.json` index — no runtime code, no dependencies.
 >
-> **Dependency direction:** `agentos-skills-registry` depends on _this_ package
-> (not the reverse). This package has zero knowledge of the catalog -- it only
-> knows how to read any directory containing `SKILL.md` files.
+> For the **catalog SDK** (query helpers, lazy loading, factory functions), see
+> [`@framers/agentos-skills-registry`](https://github.com/framersai/agentos-skills-registry).
+>
+> For the **runtime engine** (SkillLoader, SkillRegistry, path utilities), see
+> [`@framers/agentos`](https://github.com/framersai/agentos) (`@framers/agentos/skills`).
 
 ## What's Inside
 
-This package is the **runtime engine** for the AgentOS skills system. It provides:
+This package bundles **69 curated SKILL.md files** organized under `registry/curated/`:
 
-| Module              | Description                                                              |
-| ------------------- | ------------------------------------------------------------------------ |
-| `SkillLoader`       | Loads and parses SKILL.md files with YAML frontmatter                    |
-| `SkillRegistry`     | Runtime registry for managing, querying, and filtering loaded skills     |
-| `paths`             | Path resolution utilities for discovering default skill directories      |
-| `types`             | Full TypeScript type definitions for skills, metadata, and configuration |
+| Category       | Skills                                                                 |
+| -------------- | ---------------------------------------------------------------------- |
+| Developer      | `github`, `git`, `coding-agent`, `code-safety`, `structured-output`    |
+| Social         | `twitter-bot`, `instagram-bot`, `linkedin-bot`, `facebook-bot`, `threads-bot`, `bluesky-bot`, `mastodon-bot`, `youtube-bot`, `tiktok-bot`, `pinterest-bot`, `reddit-bot`, `blog-publisher`, `social-broadcast` |
+| Research       | `web-search`, `web-scraper`, `deep-research`, `summarize`, `company-research` |
+| Productivity   | `notion`, `obsidian`, `trello`, `apple-notes`, `apple-reminders`, `spotify-player` |
+| Communication  | `slack-helper`, `discord-helper`, `email-intelligence`                 |
+| Voice          | `voice-conversation`, `whisper-transcribe`, `streaming-stt-*`, `streaming-tts-*`, `vosk`, `piper`, `porcupine`, `openwakeword`, `diarization` |
+| Creative       | `image-gen`, `image-editing`, `audio-generation`, `video-generation`, `content-creator` |
+| AI/ML          | `vision-ocr`, `multimodal-rag`, `ml-content-classifier`, `endpoint-semantic`, `grounding-guard`, `topicality`, `emergent-tools`, `pii-redaction` |
+| Infrastructure | `cloud-ops`, `site-deploy`, `healthcheck`                              |
+| Security       | `1password`                                                            |
+| Other          | `memory-manager`, `account-manager`, `agent-config`, `seo-campaign`, `weather` |
+
+Each skill is a Markdown file with YAML frontmatter:
+
+```yaml
+---
+name: github
+version: '2.0.0'
+description: Full GitHub API integration
+author: Wunderland
+category: developer
+tags: [github, git, repository]
+requires_secrets: [github.token]
+requires_tools: [github_search, github_repo_list]
+metadata:
+  agentos:
+    emoji: "🐙"
+    primaryEnv: GITHUB_TOKEN
+    requires:
+      bins: ['gh']
+    install:
+      - id: brew-gh
+        kind: brew
+        formula: gh
+        bins: [gh]
+---
+
+# GitHub
+
+[Markdown instructions for the agent...]
+```
+
+## Ecosystem
+
+```
+@framers/agentos/skills               ← Engine (SkillLoader, SkillRegistry, path utils)
+@framers/agentos-skills               ← Content (you are here — 69 SKILL.md files + registry.json)
+@framers/agentos-skills-registry      ← Catalog SDK (SKILLS_CATALOG, query helpers, factories)
+```
+
+| Package                              | Role            | What                                                    | Runtime Code |
+| ------------------------------------ | --------------- | ------------------------------------------------------- | :----------: |
+| **@framers/agentos/skills**          | **Engine**      | SkillLoader, SkillRegistry, path utils                  |     Yes      |
+| **@framers/agentos-skills**          | **Content**     | 69 SKILL.md files + registry.json index                 |      No      |
+| **@framers/agentos-skills-registry** | **Catalog SDK** | SKILLS_CATALOG, query helpers, lazy loaders, factories  |     Yes      |
+
+> This layout mirrors the extensions ecosystem:
+> `@framers/agentos-extensions` (content) + `@framers/agentos-extensions-registry` (SDK).
 
 ## Usage
 
+### Direct JSON import
+
 ```typescript
-import {
-  SkillRegistry,
-  loadSkillFromDir,
-  loadSkillsFromDir,
-  resolveDefaultSkillsDirs,
-} from '@framers/agentos-skills';
+import registry from '@framers/agentos-skills/registry.json';
 
-// Discover default skill directories
-const dirs = resolveDefaultSkillsDirs();
+console.log(`${registry.stats.totalSkills} skills available`);
+for (const skill of registry.skills.curated) {
+  console.log(`  ${skill.metadata?.emoji ?? '📦'} ${skill.name} — ${skill.description}`);
+}
+```
 
-// Create a registry and load skills
+### Via the catalog SDK (recommended)
+
+```typescript
+import { searchSkills, loadSkillByName } from '@framers/agentos-skills-registry';
+
+const matches = searchSkills('github');
+const skill = await loadSkillByName('github');
+console.log(skill?.content); // SKILL.md body ready for prompt injection
+```
+
+### Via the runtime engine
+
+```typescript
+import { SkillRegistry } from '@framers/agentos/skills';
+
 const registry = new SkillRegistry();
-await registry.loadFromDirs(dirs);
-
-console.log(`Loaded ${registry.size} skills`);
-
-// Build a snapshot for LLM context
+await registry.loadFromDirs(['/path/to/agentos-skills/registry/curated']);
 const snapshot = registry.buildSnapshot({ platform: 'darwin', strict: true });
 console.log(snapshot.prompt);
 ```
 
-## Relationship to Other Packages
+## Contributing
 
-```
-@framers/agentos-skills              <-- You are here (ENGINE: parser, loader, SkillRegistry)
-  ^
-  |  depends on
-  |
-@framers/agentos-skills-registry     (CATALOG: 40+ curated SKILL.md files + JSON index)
-@framers/agentos                     (full cognitive runtime, re-exports skills from here)
-```
-
-| Package                              | Role        | What                                      | Runtime Code | Depends On              |
-| ------------------------------------ | ----------- | ----------------------------------------- | :----------: | ----------------------- |
-| **@framers/agentos-skills**          | **Engine**  | SkillLoader, SkillRegistry, path utils    |     Yes      | `yaml`                  |
-| **@framers/agentos-skills-registry** | **Catalog** | 40+ SKILL.md files + JSON index + catalog |      No      | `agentos-skills`, `yaml`|
-| **@framers/agentos**                 | **Runtime** | Full cognitive runtime                    |     Yes      | Many                    |
-
-## API
-
-### SkillLoader
-
-- `parseSkillFrontmatter(content)` -- Parse YAML frontmatter from SKILL.md content
-- `extractMetadata(frontmatter)` -- Extract typed SkillMetadata from parsed frontmatter
-- `loadSkillFromDir(dir)` -- Load a single skill from a directory containing SKILL.md
-- `loadSkillsFromDir(dir)` -- Load all skills from a parent directory
-- `filterByPlatform(entries, platform)` -- Filter skill entries by OS platform
-- `filterByEligibility(entries, context)` -- Filter by full eligibility context
-- `checkBinaryRequirements(entry, hasBin)` -- Check if binary requirements are met
-
-### SkillRegistry
-
-- `register(entry)` / `unregister(name)` -- Add/remove skills
-- `loadFromDir(dir)` / `loadFromDirs(dirs)` / `reload(options)` -- Bulk loading
-- `getByName(name)` / `listAll()` / `has(name)` / `size` -- Queries
-- `filterByPlatform(platform)` / `filterByEligibility(context)` -- Filtering
-- `getUserInvocableSkills()` / `getModelInvocableSkills()` -- Invocation filtering
-- `buildSnapshot(options)` -- Build LLM context snapshot
-- `buildPrompt(entries)` -- Format skills into prompt text
-- `buildCommandSpecs(options)` -- Generate CLI command specs
-
-### Path Utilities
-
-- `resolveDefaultSkillsDirs(options)` -- Resolve default skill directories to scan
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines on adding new skills.
 
 ## License
 
 MIT
-
