@@ -34,6 +34,7 @@
       "healthcheck",
       "image-editing",
       "image-gen",
+      "interactive-widgets",
       "instagram-bot",
       "linkedin-bot",
       "mastodon-bot",
@@ -1126,6 +1127,37 @@
           "emoji": "🎨",
           "primaryEnv": "OPENAI_API_KEY",
           "homepage": "https://platform.openai.com/docs/guides/images"
+        }
+      },
+      {
+        "id": "com.framers.skill.interactive-widgets",
+        "name": "interactive-widgets",
+        "displayName": "Interactive Widgets",
+        "version": "1.0.0",
+        "path": "registry/curated/interactive-widgets",
+        "description": "Generate interactive HTML/CSS/JS widgets — data visualizations, 3D scenes, dashboards, maps, and more.",
+        "category": "productivity",
+        "namespace": "wunderland",
+        "verified": true,
+        "source": "curated",
+        "verifiedAt": "2026-03-28T13:31:49.809Z",
+        "keywords": [
+          "widget",
+          "interactive",
+          "html",
+          "visualization",
+          "d3",
+          "threejs",
+          "charts",
+          "maps",
+          "dashboard"
+        ],
+        "requiredTools": [
+          "generate_widget"
+        ],
+        "metadata": {
+          "emoji": "\u2728",
+          "homepage": "https://wunderland.sh"
         }
       },
       {
