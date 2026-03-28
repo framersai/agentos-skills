@@ -1,4 +1,4 @@
-# Contributing to @framers/agentos-skills-registry
+# Contributing to @framers/agentos-skills
 
 Thank you for your interest in contributing a skill to the AgentOS ecosystem! This guide walks you through the process of creating, testing, and submitting a new skill.
 
