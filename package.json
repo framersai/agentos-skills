@@ -1,6 +1,6 @@
 {
   "name": "@framers/agentos-skills",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Skills engine for AgentOS — parser, loader, and SkillRegistry runtime for SKILL.md prompt modules",
   "type": "module",
   "sideEffects": false,
