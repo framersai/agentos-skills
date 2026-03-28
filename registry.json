@@ -17,6 +17,7 @@
       "coding-agent",
       "content-creator",
       "deep-research",
+      "document-export",
       "diarization",
       "discord-helper",
       "email-intelligence",
@@ -589,6 +590,39 @@
           "emoji": "🎮",
           "primaryEnv": "DISCORD_BOT_TOKEN",
           "homepage": "https://discord.com/developers"
+        }
+      },
+      {
+        "id": "com.framers.skill.document-export",
+        "name": "document-export",
+        "displayName": "Document Export",
+        "version": "1.0.0",
+        "path": "registry/curated/document-export",
+        "description": "Export research, reports, and analysis to PDF, DOCX, PPTX, CSV, and XLSX with professional formatting.",
+        "category": "productivity",
+        "namespace": "wunderland",
+        "verified": true,
+        "source": "curated",
+        "verifiedAt": "2026-03-28T00:00:00.000Z",
+        "keywords": [
+          "document",
+          "export",
+          "pdf",
+          "docx",
+          "pptx",
+          "csv",
+          "xlsx",
+          "report",
+          "slides"
+        ],
+        "requiredSecrets": [],
+        "requiredTools": [
+          "document_export",
+          "document_suggest"
+        ],
+        "metadata": {
+          "emoji": "\ud83d\udcc4",
+          "homepage": "https://wunderland.sh"
         }
       },
       {
@@ -2265,8 +2299,8 @@
     "community": []
   },
   "stats": {
-    "totalSkills": 67,
-    "curatedCount": 67,
+    "totalSkills": 68,
+    "curatedCount": 68,
     "communityCount": 0
   }
 }
