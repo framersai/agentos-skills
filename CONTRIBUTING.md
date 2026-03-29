@@ -4,7 +4,7 @@ Thank you for your interest in contributing a skill to the AgentOS ecosystem! Th
 
 ## Overview
 
-Skills are **SKILL.md files** — each containing YAML frontmatter (metadata) and a markdown body (instructions for the AI agent). They live inside the `@framers/agentos-skills-registry` package alongside the typed SDK. There are no individual packages per skill.
+Skills are **SKILL.md files** — each containing YAML frontmatter (metadata) and a markdown body (instructions for the AI agent). They live inside the `@framers/agentos-skills` content package under `registry/`. The typed SDK that discovers and loads them lives in the sibling `@framers/agentos-skills-registry` package. There are no individual packages per skill.
 
 Skills are organized into two tiers:
 
