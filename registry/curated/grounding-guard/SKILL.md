@@ -30,6 +30,10 @@ against the retrieved sources using NLI entailment detection.
 - **Contradicted**: claim directly contradicts a source document
 - **Unverifiable**: claim cannot be found in any source (potential hallucination)
 
+## Interaction with HITL Guardrail Overrides
+
+When HITL is enabled with `guardrailOverride: true`, the grounding guard participates in the post-approval guardrail pipeline. If a tool action is approved (by human or LLM judge) but produces output containing ungrounded claims, the grounding guard can flag or veto the response before it reaches the user. See the **hitl-safety** skill for HITL configuration details.
+
 ## Constraints
 
 - Only runs when RAG sources are available (no sources → no verification)

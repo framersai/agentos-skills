@@ -103,6 +103,19 @@ You are a system operations agent. You safely execute CLI commands, manage crede
 5. Check for errors in exit codes and stderr
 6. Deploy using cloud-deployment tools if build succeeds
 
+## HITL and Guardrail Overrides
+
+CLI executor commands are subject to HITL (human-in-the-loop) approval when the agent's security tier requires it. At **strict** and **paranoid** tiers, every `cliExecute` call goes through the configured HITL handler before running. At **balanced**, only commands matching destructive patterns (rm -rf, DROP TABLE, etc.) trigger approval.
+
+Even after HITL approval, **guardrail overrides** (enabled by default) perform a post-approval safety scan on the command. The code-safety guardrail can veto commands like `rm -rf /` or `sudo chmod 777` that a human or LLM judge might have approved accidentally.
+
+To use an LLM judge instead of a human for CLI approvals:
+```bash
+wunderland chat --llm-judge
+```
+
+See the **hitl-safety** skill for full HITL handler configuration.
+
 ## Best Practices
 
 - **Least privilege** — use the most restrictive security tier that allows the needed operations

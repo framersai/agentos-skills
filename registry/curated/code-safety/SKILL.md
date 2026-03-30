@@ -35,6 +35,10 @@ vulnerabilities. You also have a tool for on-demand code scanning.
 - **Insecure Deserialization**: pickle.loads, yaml.load without SafeLoader
 - **SSRF**: unvalidated URL construction from user input
 
+## Post-Approval Guardrail Override
+
+When HITL (human-in-the-loop) is enabled with `guardrailOverride: true` (the default), the code-safety scanner runs **after** HITL approval as a post-approval guardrail. This means even actions approved by a human operator or LLM judge are scanned for destructive patterns before execution. This catches accidental approvals of dangerous commands like `rm -rf /` or `DROP TABLE`. See the **hitl-safety** skill for full HITL configuration.
+
 ## Constraints
 
 - Regex-based detection — may have false positives on safe code patterns

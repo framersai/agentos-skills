@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updated": "2026-03-29T04:17:37.172Z",
+  "updated": "2026-03-30T11:33:50.828Z",
   "categories": {
     "curated": [
       "1password",
@@ -34,6 +34,7 @@
       "google-cloud-tts",
       "grounding-guard",
       "healthcheck",
+      "hitl-safety",
       "image-editing",
       "image-gen",
       "instagram-bot",
@@ -99,7 +100,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "1password",
           "passwords",
@@ -144,7 +145,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "accounts",
           "credentials",
@@ -180,7 +181,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "agent",
           "config",
@@ -201,7 +202,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "voice",
           "tts",
@@ -232,7 +233,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "apple-notes",
           "macos",
@@ -266,7 +267,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "apple-reminders",
           "macos",
@@ -301,7 +302,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "audio",
           "music",
@@ -328,7 +329,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "blog",
           "publishing",
@@ -372,7 +373,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "bluesky",
           "social-media",
@@ -412,7 +413,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "channels",
           "messaging",
@@ -437,7 +438,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "shell",
           "cli",
@@ -477,7 +478,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "cloud",
           "deployment",
@@ -508,7 +509,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "cloud",
           "devops",
@@ -535,7 +536,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "guardrails",
           "code-safety",
@@ -563,7 +564,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "coding",
           "programming",
@@ -590,7 +591,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "clearbit",
           "company",
@@ -622,7 +623,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "content",
           "writing",
@@ -652,7 +653,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "research",
           "investigation",
@@ -690,7 +691,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "voice",
           "diarization",
@@ -715,7 +716,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "discord",
           "messaging",
@@ -743,7 +744,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "document",
           "export",
@@ -778,7 +779,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "metadata": {
           "primaryEnv": "INTERNAL_API_SECRET",
           "emoji": "📧",
@@ -819,7 +820,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "emergent",
           "tools",
@@ -856,7 +857,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "voice",
           "endpointing",
@@ -882,7 +883,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "facebook",
           "social-media",
@@ -921,7 +922,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "git",
           "version-control",
@@ -975,7 +976,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "github",
           "git",
@@ -1034,7 +1035,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "voice",
           "stt",
@@ -1063,7 +1064,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "voice",
           "tts",
@@ -1092,7 +1093,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "guardrails",
           "hallucination",
@@ -1120,7 +1121,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "monitoring",
           "health",
@@ -1143,6 +1144,30 @@
         }
       },
       {
+        "id": "com.framers.skill.hitl-safety",
+        "name": "hitl-safety",
+        "displayName": "hitl-safety",
+        "version": "1.0.0",
+        "path": "registry/curated/hitl-safety",
+        "description": "Human-in-the-loop safety controls — approval routing via human, LLM judge, or auto-approve with guardrail overrides.",
+        "category": "safety",
+        "namespace": "wunderland",
+        "verified": true,
+        "source": "curated",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
+        "keywords": [
+          "hitl",
+          "approval",
+          "llm-judge",
+          "guardrails",
+          "safety",
+          "human-in-the-loop"
+        ],
+        "metadata": {
+          "emoji": "🛡"
+        }
+      },
+      {
         "id": "com.framers.skill.image-editing",
         "name": "image-editing",
         "displayName": "image-editing",
@@ -1153,7 +1178,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "image",
           "editing",
@@ -1174,7 +1199,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "image-generation",
           "ai-art",
@@ -1207,7 +1232,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "instagram",
           "social-media",
@@ -1245,7 +1270,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "widget",
           "interactive",
@@ -1276,7 +1301,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "linkedin",
           "social-media",
@@ -1314,7 +1339,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "mastodon",
           "fediverse",
@@ -1354,7 +1379,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "media",
           "giphy",
@@ -1382,7 +1407,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "memory",
           "cognitive",
@@ -1406,7 +1431,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "guardrails",
           "safety",
@@ -1436,7 +1461,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "movies",
           "tv",
@@ -1470,7 +1495,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "rag",
           "multimodal",
@@ -1500,7 +1525,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "notion",
           "wiki",
@@ -1529,7 +1554,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "obsidian",
           "markdown",
@@ -1557,7 +1582,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "voice",
           "wake-word",
@@ -1585,7 +1610,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "pii",
           "privacy",
@@ -1616,7 +1641,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "pinterest",
           "social-media",
@@ -1653,7 +1678,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "voice",
           "tts",
@@ -1680,7 +1705,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "voice",
           "wake-word",
@@ -1711,7 +1736,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "productivity",
           "email",
@@ -1738,7 +1763,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "reddit",
           "social-media",
@@ -1779,7 +1804,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "research",
           "web-search",
@@ -1805,7 +1830,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "seo",
           "link-building",
@@ -1840,7 +1865,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "deploy",
           "cloud",
@@ -1876,7 +1901,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "slack",
           "messaging",
@@ -1908,7 +1933,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "social-media",
           "automation",
@@ -1936,7 +1961,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z"
+        "verifiedAt": "2026-03-30T11:33:50.828Z"
       },
       {
         "id": "com.framers.skill.spotify-player",
@@ -1949,7 +1974,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "spotify",
           "music",
@@ -1984,7 +2009,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "voice",
           "stt",
@@ -2014,7 +2039,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "voice",
           "stt",
@@ -2045,7 +2070,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "voice",
           "tts",
@@ -2075,7 +2100,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "voice",
           "tts",
@@ -2104,7 +2129,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "structured-output",
           "json",
@@ -2124,7 +2149,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "summarization",
           "text-processing",
@@ -2150,7 +2175,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "system",
           "cli",
@@ -2176,7 +2201,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "threads",
           "social-media",
@@ -2212,7 +2237,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "tiktok",
           "video",
@@ -2249,7 +2274,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "guardrails",
           "topics",
@@ -2276,7 +2301,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "trello",
           "kanban",
@@ -2309,7 +2334,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "twitter",
           "social-media",
@@ -2352,7 +2377,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "video",
           "generation",
@@ -2379,7 +2404,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "vision",
           "ocr",
@@ -2402,7 +2427,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "voice",
           "speech",
@@ -2429,7 +2454,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "voice",
           "telephony",
@@ -2457,7 +2482,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "voice",
           "stt",
@@ -2483,7 +2508,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "weather",
           "forecast",
@@ -2509,7 +2534,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "scraping",
           "browser",
@@ -2546,7 +2571,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "search",
           "web",
@@ -2573,7 +2598,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "transcription",
           "whisper",
@@ -2636,7 +2661,7 @@
         "namespace": "wunderland",
         "verified": true,
         "source": "curated",
-        "verifiedAt": "2026-03-29T04:17:37.172Z",
+        "verifiedAt": "2026-03-30T11:33:50.828Z",
         "keywords": [
           "youtube",
           "video",
@@ -2669,8 +2694,8 @@
     "community": []
   },
   "stats": {
-    "totalSkills": 80,
-    "curatedCount": 80,
+    "totalSkills": 81,
+    "curatedCount": 81,
     "communityCount": 0
   }
 }

@@ -49,6 +49,10 @@ Redact PII from text and return the sanitized version. Supports styles:
 - If a user explicitly asks you to include their name/email, respect that —
   the guardrail handles involuntary leakage, not intentional sharing
 
+## Post-Approval Guardrail Override
+
+When HITL is enabled with `guardrailOverride: true` (the default), PII redaction runs as a post-approval guardrail. Tool arguments that pass HITL approval (human or LLM judge) are still scanned for PII before execution. This catches cases where a human approves a tool call without noticing that the arguments contain SSNs, credit card numbers, or other sensitive data. See the **hitl-safety** skill for full HITL configuration.
+
 ## Constraints
 
 - NER model (~110MB) loads lazily on first detection of name-like tokens
