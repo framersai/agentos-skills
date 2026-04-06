@@ -1,7 +1,7 @@
 ---
 name: image-gen
 version: '2.0.0'
-description: Generate, edit, upscale, and variate images using the AgentOS multi-provider image pipeline with automatic fallback.
+description: Generate, edit, upscale, variate, and style-transfer images using the AgentOS multi-provider image pipeline with automatic fallback and character consistency.
 author: Wunderland
 namespace: wunderland
 category: creative
@@ -17,14 +17,15 @@ metadata:
 
 # AI Image Generation Workflow
 
-Use this skill when the user wants to create, edit, upscale, or create variations of images. AgentOS provides four high-level APIs that route to any configured provider with automatic fallback when multiple providers have credentials set.
+Use this skill when the user wants to create, edit, upscale, style-transfer, or create variations of images. AgentOS provides five high-level APIs that route to any configured provider with automatic fallback when multiple providers have credentials set.
 
-## The Four High-Level APIs
+## The Five High-Level APIs
 
-1. **`generateImage()`** — Create new images from text prompts.
+1. **`generateImage()`** — Create new images from text prompts. Supports `referenceImageUrl` for character consistency.
 2. **`editImage()`** — Transform existing images via img2img, inpainting, or outpainting.
 3. **`upscaleImage()`** — Increase resolution (2x or 4x super-resolution).
 4. **`variateImage()`** — Generate visual variations of an existing image.
+5. **`transferStyle()`** — Apply the visual aesthetic of a reference image to a source image via Flux Redux.
 
 If the `generate_image` tool is not loaded, enable it with `extensions_enable image-generation`.
 
@@ -54,6 +55,19 @@ Use this to pick the right API for the user's request:
 - **"Extend / expand the borders"** -> `editImage()` with `mode: 'outpaint'`
 - **"Make it higher resolution / sharper"** -> `upscaleImage()` with `scale: 2` or `4`
 - **"Show me variations / alternatives"** -> `variateImage()` with `n: 3-4`
+- **"Make it look like this style"** -> `transferStyle()` with source image + style reference
+- **"Same character but different expression/pose"** -> `generateImage()` with `referenceImageUrl` + `consistencyMode: 'strict'`
+- **"Generate a character sheet / expression sheet"** -> Use the `AvatarPipeline` which handles multi-stage consistency automatically
+
+## Character Consistency
+
+When the user wants the same character across multiple images, use `referenceImageUrl` and `consistencyMode`:
+
+- `'strict'` — Face must match exactly. Best for expression sheets. Auto-selects Pulid on Replicate.
+- `'balanced'` — Recognizable but allows natural variation. Good for full-body shots and different angles.
+- `'loose'` — Light influence from the reference. Good for "inspired by" mood pieces.
+
+Supported providers: **Replicate** (Pulid, IP-Adapter), **Fal** (IP-Adapter), **SD-Local** (ControlNet). OpenAI/Stability ignore the field gracefully.
 
 ## Prompt Engineering Tips
 
