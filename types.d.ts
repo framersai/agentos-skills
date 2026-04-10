@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * Type declarations for the `@framers/agentos-skills` content package.
  *

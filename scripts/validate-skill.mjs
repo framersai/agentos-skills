@@ -25,6 +25,7 @@ const VALID_CATEGORIES = new Set([
   'creative',
   'developer-tools',
   'devops',
+  'game',
   'information',
   'infrastructure',
   'marketing',
@@ -229,19 +230,25 @@ function discoverSkills(rootDir) {
   const skills = [];
   const tiers = ['curated', 'community'];
 
+  function walk(dir) {
+    for (const entry of readdirSync(dir)) {
+      const entryPath = join(dir, entry);
+      if (!statSync(entryPath).isDirectory()) continue;
+
+      const skillFile = join(entryPath, 'SKILL.md');
+      if (existsSync(skillFile)) {
+        skills.push(skillFile);
+        continue;
+      }
+
+      walk(entryPath);
+    }
+  }
+
   for (const tier of tiers) {
     const tierDir = join(rootDir, 'registry', tier);
     if (!existsSync(tierDir)) continue;
-
-    for (const entry of readdirSync(tierDir)) {
-      const skillDir = join(tierDir, entry);
-      if (!statSync(skillDir).isDirectory()) continue;
-
-      const skillFile = join(skillDir, 'SKILL.md');
-      if (existsSync(skillFile)) {
-        skills.push(skillFile);
-      }
-    }
+    walk(tierDir);
   }
 
   return skills;

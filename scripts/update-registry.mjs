@@ -30,11 +30,28 @@ function readFrontmatter(filePath) {
 
 function listSkillDirs(root) {
   if (!fs.existsSync(root)) return [];
-  return fs
-    .readdirSync(root, { withFileTypes: true })
-    .filter((d) => d.isDirectory() && fs.existsSync(path.join(root, d.name, 'SKILL.md')))
-    .map((d) => d.name)
-    .sort();
+
+  const skills = [];
+
+  function walk(currentDir, relativeDir = '') {
+    for (const entry of fs.readdirSync(currentDir, { withFileTypes: true })) {
+      if (!entry.isDirectory()) continue;
+      const nextRelativeDir = relativeDir ? `${relativeDir}/${entry.name}` : entry.name;
+      const nextDir = path.join(currentDir, entry.name);
+      const skillPath = path.join(nextDir, 'SKILL.md');
+
+      if (fs.existsSync(skillPath)) {
+        skills.push(nextRelativeDir);
+        continue;
+      }
+
+      walk(nextDir, nextRelativeDir);
+    }
+  }
+
+  walk(root);
+
+  return skills.sort();
 }
 
 function cleanObject(obj) {
@@ -67,14 +84,18 @@ function buildEntry(name, source, updatedAt) {
   const metadata = fm?.metadata?.agentos && typeof fm.metadata.agentos === 'object'
     ? fm.metadata.agentos
     : undefined;
+  const skillIdSuffix = name.replaceAll('/', '.');
 
   return cleanObject({
-    id: source === 'curated' ? `com.framers.skill.${name}` : `com.community.skill.${name}`,
+    id:
+      source === 'curated'
+        ? `com.framers.skill.${skillIdSuffix}`
+        : `com.community.skill.${skillIdSuffix}`,
     name,
     displayName:
       typeof fm.name === 'string' && fm.name.trim().length > 0
         ? fm.name
-        : slugToDisplayName(name),
+        : slugToDisplayName(name.replaceAll('/', '-')),
     version: typeof fm.version === 'string' && fm.version ? fm.version : '1.0.0',
     path: `registry/${source}/${name}`,
     description: typeof fm.description === 'string' ? fm.description : '',

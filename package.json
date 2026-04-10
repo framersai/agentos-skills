@@ -1,7 +1,7 @@
 {
   "name": "@framers/agentos-skills",
   "version": "1.0.0",
-  "description": "Curated SKILL.md prompt modules for AgentOS — 72 staff-verified skills with machine-readable registry index",
+  "description": "Curated SKILL.md prompt modules for AgentOS with a machine-readable registry index",
   "type": "module",
   "sideEffects": false,
   "exports": {

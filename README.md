@@ -6,7 +6,7 @@
 
 # @framers/agentos-skills
 
-**Curated SKILL.md prompt modules for AgentOS** — 72 staff-verified skills with a machine-readable registry index.
+**Curated SKILL.md prompt modules for AgentOS** — 88 staff-verified skills with a machine-readable registry index.
 
 [![npm](https://img.shields.io/npm/v/@framers/agentos-skills?logo=npm&color=cb3837)](https://www.npmjs.com/package/@framers/agentos-skills)
 
@@ -14,7 +14,7 @@
 npm install @framers/agentos-skills
 ```
 
-> **This is the content package.** It contains 72 curated SKILL.md files and
+> **This is the content package.** It contains 88 curated SKILL.md files and
 > the auto-generated `registry.json` index — no runtime code, no dependencies.
 >
 > For the **catalog SDK** (query helpers, lazy loading, factory functions), see
@@ -25,7 +25,7 @@ npm install @framers/agentos-skills
 
 ## What's Inside
 
-This package bundles **72 curated SKILL.md files** organized under `registry/curated/`:
+This package bundles **88 curated SKILL.md files** organized under `registry/curated/`:
 
 | Category       | Skills                                                                 |
 | -------------- | ---------------------------------------------------------------------- |
@@ -75,14 +75,14 @@ metadata:
 
 ```
 @framers/agentos/skills               ← Engine (SkillLoader, SkillRegistry, path utils)
-@framers/agentos-skills               ← Content (you are here — 72 SKILL.md files + registry.json)
+@framers/agentos-skills               ← Content (you are here — 88 SKILL.md files + registry.json)
 @framers/agentos-skills-registry      ← Catalog SDK (SKILLS_CATALOG, query helpers, factories)
 ```
 
 | Package                              | Role            | What                                                    | Runtime Code |
 | ------------------------------------ | --------------- | ------------------------------------------------------- | :----------: |
 | **@framers/agentos/skills**          | **Engine**      | SkillLoader, SkillRegistry, path utils                  |     Yes      |
-| **@framers/agentos-skills**          | **Content**     | 72 SKILL.md files + registry.json index                 |      No      |
+| **@framers/agentos-skills**          | **Content**     | 88 SKILL.md files + registry.json index                 |      No      |
 | **@framers/agentos-skills-registry** | **Catalog SDK** | SKILLS_CATALOG, query helpers, lazy loaders, factories  |     Yes      |
 
 > This layout mirrors the extensions ecosystem:
