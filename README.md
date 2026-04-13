@@ -129,3 +129,16 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines on adding new skills.
 ## License
 
 MIT
+
+---
+
+<p align="center">
+  <a href="https://agentos.sh"><img src="logos/agentos-primary-no-tagline-transparent-2x.png" alt="AgentOS" height="36" /></a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://frame.dev"><img src="logos/frame-logo-green-no-tagline.svg" alt="Frame.dev" height="28" /></a>
+</p>
+
+<p align="center">
+  Built by <a href="https://manic.agency">Manic Agency LLC</a> / <a href="https://frame.dev">Frame.dev</a><br>
+  Contact: <a href="mailto:team@frame.dev">team@frame.dev</a>
+</p>
