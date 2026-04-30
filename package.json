@@ -38,7 +38,7 @@
     "email": "team@frame.dev",
     "url": "https://frame.dev"
   },
-  "license": "MIT",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/framersai/agentos-skills.git"
