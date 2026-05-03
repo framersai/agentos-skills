@@ -1,7 +1,11 @@
 {
   "name": "@framers/agentos-skills",
   "version": "1.0.0",
-  "description": "Curated SKILL.md prompt modules for AgentOS with a machine-readable registry index",
+  "description": "Curated SKILL.md prompt modules for AgentOS — machine-readable registry of skills, prompts, and reusable agent capabilities. Companion to the @framers/agentos TypeScript AI agent runtime.",
+  "homepage": "https://agentos.sh",
+  "bugs": {
+    "url": "https://github.com/framersai/agentos-skills/issues"
+  },
   "type": "module",
   "sideEffects": false,
   "exports": {
@@ -26,12 +30,22 @@
   },
   "keywords": [
     "agentos",
+    "framers-agentos",
+    "agentos-skills",
     "skills",
-    "prompts",
     "skill-modules",
-    "ai-agent",
+    "skill-md",
+    "prompts",
+    "prompt-modules",
     "prompt-engineering",
-    "curated-catalog"
+    "ai-agent",
+    "ai-agents",
+    "ai-agent-skills",
+    "agent-framework",
+    "curated-catalog",
+    "registry",
+    "framers",
+    "frame-dev"
   ],
   "author": {
     "name": "Framers AI",
