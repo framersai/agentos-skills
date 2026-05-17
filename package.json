@@ -9,12 +9,16 @@
   "type": "module",
   "sideEffects": false,
   "exports": {
-    ".": "./registry.json",
+    ".": {
+      "import": "./index.mjs",
+      "types": "./types.d.ts"
+    },
     "./registry.json": "./registry.json",
     "./types": "./types.d.ts",
     "./package.json": "./package.json"
   },
   "files": [
+    "index.mjs",
     "registry",
     "registry.json",
     "types.d.ts",
