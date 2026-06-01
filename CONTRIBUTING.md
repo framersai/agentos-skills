@@ -19,7 +19,7 @@ Curated skills ship pre-verified and are maintained by the Framers team. Communi
 
 ### Step 1 — Fork the repo
 
-Fork [framersai/agentos-skills-registry](https://github.com/framersai/agentos-skills-registry) and clone it locally.
+Fork [framersai/agentos-skills-registry](https://github.com/framerslab/agentos-skills-registry) and clone it locally.
 
 ```bash
 git clone https://github.com/<your-username>/agentos-skills-registry.git

@@ -4,7 +4,7 @@
   "description": "Curated SKILL.md prompt modules for AgentOS — machine-readable registry of skills, prompts, and reusable agent capabilities. Companion to the @framers/agentos TypeScript AI agent runtime.",
   "homepage": "https://agentos.sh",
   "bugs": {
-    "url": "https://github.com/framersai/agentos-skills/issues"
+    "url": "https://github.com/framerslab/agentos-skills/issues"
   },
   "type": "module",
   "sideEffects": false,
@@ -59,7 +59,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/framersai/agentos-skills.git"
+    "url": "https://github.com/framerslab/agentos-skills.git"
   },
   "publishConfig": {
     "access": "public"
