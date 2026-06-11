@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updated": "2026-03-31T07:43:19.688Z",
+  "updated": "2026-06-07T17:31:25.680Z",
   "categories": {
     "curated": [
       "1password",
@@ -92,7 +92,9 @@
       "whisper-transcribe",
       "youtube-bot"
     ],
-    "community": []
+    "community": [
+      "tweetclaw-source-research"
+    ]
   },
   "skills": {
     "curated": [
@@ -2870,11 +2872,44 @@
         }
       }
     ],
-    "community": []
+    "community": [
+      {
+        "id": "com.community.skill.tweetclaw-source-research",
+        "name": "tweetclaw-source-research",
+        "displayName": "tweetclaw-source-research",
+        "version": "1.0.0",
+        "path": "registry/community/tweetclaw-source-research",
+        "description": "OpenClaw TweetClaw workflow for collecting X/Twitter source context before drafting or social automation.",
+        "category": "social-automation",
+        "namespace": "community",
+        "verified": false,
+        "source": "community",
+        "keywords": [
+          "tweetclaw",
+          "openclaw",
+          "twitter",
+          "x",
+          "social-media",
+          "source-research",
+          "approval-gated"
+        ],
+        "requiredSecrets": [
+          "xquik.apiKey"
+        ],
+        "requiredTools": [
+          "shell_execute"
+        ],
+        "metadata": {
+          "emoji": "🔎",
+          "primaryEnv": "XQUIK_API_KEY",
+          "homepage": "https://github.com/Xquik-dev/tweetclaw"
+        }
+      }
+    ]
   },
   "stats": {
-    "totalSkills": 88,
+    "totalSkills": 89,
     "curatedCount": 88,
-    "communityCount": 0
+    "communityCount": 1
   }
 }

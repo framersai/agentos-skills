@@ -32,6 +32,9 @@
     "typecheck": "echo 'agentos-skills: content-only package, no TypeScript to check'",
     "build": "echo 'agentos-skills: content-only package, no build step'"
   },
+  "devDependencies": {
+    "yaml": "^2.8.3"
+  },
   "keywords": [
     "agentos",
     "framers-agentos",
