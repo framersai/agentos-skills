@@ -7,7 +7,7 @@ namespace: community
 category: social-automation
 tags: [x, twitter, mcp, social-data, webhooks]
 requires_secrets: [xquik.apiKey]
-requires_tools: [xquikMcp, xquikApi]
+requires_tools: []
 metadata:
   agentos:
     emoji: "\U0001F426"
@@ -22,8 +22,8 @@ You can use this skill when a user asks you to work with X/Twitter data through 
 
 1. Ask the user to provide a scoped Xquik API key through the agent's secure credential store.
 2. Store it as `XQUIK_API_KEY` or the platform equivalent.
-3. Prefer the Xquik MCP server when the client supports remote MCP tools.
-4. Use the REST API when the user needs a specific endpoint, batch flow, webhook, or SDK integration.
+3. Connect Xquik as a remote MCP server when the client supports remote MCP tools.
+4. Configure a REST client for specific endpoints, batch flows, webhooks, or SDK integrations.
 
 ## Workflows
 
