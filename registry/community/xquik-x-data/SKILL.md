@@ -22,14 +22,14 @@ You can use this skill when a user asks you to work with X/Twitter data through 
 
 1. Ask the user to provide a scoped Xquik API key through the agent's secure credential store.
 2. Store it as `XQUIK_API_KEY` or the platform equivalent.
-3. Connect Xquik as the `xquikMcp` remote MCP server when the client supports remote MCP tools.
-4. Configure `xquikApi` as the REST client for specific endpoints, batch flows, webhooks, or SDK integrations.
+3. Connect Xquik as the `xquikMcp` remote MCP server when the client supports remote MCP tools. Use MCP server `com.xquik/mcp` at `https://xquik.com/mcp`.
+4. Configure `xquikApi` as the REST client for `https://xquik.com/api/v1` endpoints, batch flows, webhooks, or SDK integrations.
 5. If an AgentOS host uses different local names, map them to the same two roles: MCP tools for interactive reads and REST API calls for endpoint-specific jobs.
 
 ## Tool Mapping
 
-- Use `xquikMcp` when the client exposes Xquik as remote MCP tools for search, reads, extractions, and setup discovery.
-- Use `xquikApi` when the workflow needs direct REST endpoints, SDK calls, batch extraction jobs, or webhook configuration.
+- Use `xquikMcp` for the `com.xquik/mcp` remote MCP server at `https://xquik.com/mcp` when the client exposes Xquik tools for search, reads, extractions, and setup discovery.
+- Use `xquikApi` for the `https://xquik.com/api/v1` REST surface when the workflow needs direct endpoints, SDK calls, batch extraction jobs, or webhook configuration.
 - Keep credentials in AgentOS secure storage. Never embed API keys, signing secrets, callback URLs, cookies, or session material in prompts, logs, skill files, or code examples.
 
 ## Workflows
