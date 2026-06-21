@@ -17,7 +17,7 @@ metadata:
 
 You can use this skill when a user needs sourced X/Twitter context inside Hermes Agent workflows. It is best for reading profiles, timelines, searches, and post URLs, then turning those results into concise briefs, evidence lists, or handoff notes.
 
-Install the Hermes Tweet plugin from `https://github.com/Xquik-dev/hermes-tweet`, configure `XQUIK_API_KEY`, and keep write actions disabled unless the user has explicitly opted in with `HERMES_TWEET_ENABLE_ACTIONS=true`.
+Install and enable the Hermes Tweet plugin with `hermes plugins install Xquik-dev/hermes-tweet --enable`, configure `XQUIK_API_KEY`, then verify the tools with `hermes tools list`. Keep write actions disabled unless the user has explicitly opted in with `HERMES_TWEET_ENABLE_ACTIONS=true`.
 
 ## Workflow
 
