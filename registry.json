@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updated": "2026-03-31T07:43:19.688Z",
+  "updated": "2026-06-21T04:39:48.487Z",
   "categories": {
     "curated": [
       "1password",
@@ -92,7 +92,9 @@
       "whisper-transcribe",
       "youtube-bot"
     ],
-    "community": []
+    "community": [
+      "hermes-tweet"
+    ]
   },
   "skills": {
     "curated": [
@@ -2870,11 +2872,37 @@
         }
       }
     ],
-    "community": []
+    "community": [
+      {
+        "id": "com.community.skill.hermes-tweet",
+        "name": "hermes-tweet",
+        "displayName": "hermes-tweet",
+        "version": "0.1.6",
+        "path": "registry/community/hermes-tweet",
+        "description": "Use Hermes Tweet to read sourced X/Twitter profiles, timelines, searches, and post URLs, with posting actions gated by explicit env opt-in.",
+        "category": "social-automation",
+        "namespace": "community",
+        "verified": false,
+        "source": "community",
+        "keywords": [
+          "hermes-agent",
+          "twitter",
+          "x",
+          "social-listening",
+          "social-research"
+        ],
+        "requiredSecrets": [
+          "XQUIK_API_KEY"
+        ],
+        "metadata": {
+          "homepage": "https://github.com/Xquik-dev/hermes-tweet"
+        }
+      }
+    ]
   },
   "stats": {
-    "totalSkills": 88,
+    "totalSkills": 89,
     "curatedCount": 88,
-    "communityCount": 0
+    "communityCount": 1
   }
 }
