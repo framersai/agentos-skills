@@ -13,6 +13,7 @@
 
 import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
 import { resolve, basename, dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -265,7 +266,7 @@ function main() {
 
   if (args.length === 0) {
     // Validate all skills
-    const rootDir = resolve(dirname(new URL(import.meta.url).pathname), '..');
+    const rootDir = resolve(dirname(fileURLToPath(import.meta.url)), '..');
     filesToValidate = discoverSkills(rootDir);
     if (filesToValidate.length === 0) {
       console.log('No SKILL.md files found in registry/curated/ or registry/community/.');
